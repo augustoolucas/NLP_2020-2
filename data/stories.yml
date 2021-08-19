@@ -1,0 +1,32 @@
+version: "2.0"
+
+stories:
+- story: find restaurant
+  steps:
+    - intent: find_restaurants
+    - action: utter_ask_city
+    - intent: inform
+      entities:
+        - city: "Berkeley"
+    - action: utter_ask_cousine
+    - intent: inform
+      entities:
+        - cousine: "American"
+    - action: utter_show_restaurant
+
+- story: reserve restaurant
+  steps:
+    - intent: reserve_restaurant
+      entities:
+        - restaurant_name: "Golden Wok"
+    - action: utter_ask_time
+    - intent: inform
+      entities:
+        - time: "six pm"
+    - action: utter_ask_date
+    - intent: inform
+      entities:
+        - date: "12th"
+    - action: utter_confirm_reservation_data
+    - intent: confirm
+    - action: utter_confirm_reservation

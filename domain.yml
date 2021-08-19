@@ -1,0 +1,61 @@
+version: "2.0"
+
+intents:
+  - greet
+  - find_restaurants
+  - reserve_restaurant
+  - inform
+  - get_information
+  - confirm
+  - negate
+  - end_dialog
+
+entities:
+  - restaurant_name
+  - city
+  - time
+  - cuisine
+  - date
+
+slots:
+  restaurant_name:
+    type: text
+    influence_conversation: true
+  city:
+    type: text
+    influence_conversation: true
+  time:
+    type: text
+    influence_conversation: true
+  cuisine:
+    type: text
+    influence_conversation: true
+  date:
+    type: text
+    influence_conversation: true
+
+responses:
+  utter_greet:
+    - text: "Hi, how can I assist you today?"
+  utter_ask_restaurant_name:
+    - text: "At what restaurant do you want to make a reservation?"
+  utter_ask_city:
+    - text: "You're looking for a restaurant in which city?"
+  utter_ask_time:
+    - text: "I should book you at what time?"
+  utter_ask_cousine:
+    - text: "What kind of food are you thinking of eat?"
+  utter_ask_date:
+    - text: "For what date would it be?"
+  utter_end_dialog:
+  - text: "It was my pleasure helping you out. Have a great day!"
+  utter_show_restaurant:
+  - text: "I found a nice {cuisine} in {city}"
+  utter_confirm_reservation_data:
+  - text: "Just to confirm, a table at {restaurant_name} at {time} of {date}. Is that correct?"
+  utter_confirm_reservation:
+  - text: "Your reservation is confirmed. Anything else?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

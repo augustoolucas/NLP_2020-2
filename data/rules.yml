@@ -1,0 +1,12 @@
+version: "2.0"
+
+rules:
+- rule: Deal with greet intent
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Deal with end_dialog intent
+  steps:
+  - intent: end_dialog
+  - action: utter_end_dialog

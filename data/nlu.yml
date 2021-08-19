@@ -1,0 +1,111 @@
+version: "2.0"
+
+nlu:
+- intent: find_restaurants
+  examples: |
+    - I am feeling hungry so I would like to find a place to eat.
+    - Hi i need a help, i am very hungry, I am looking for a restaurant
+    - Help me find a good restaurant.
+    - I'm looking for a place to eat.
+    - I'd like to find a place to eat.
+    - Can you help find a place to eat?
+    - My friend and I are looking for a place to eat.
+    - I am looking to eat somewhere
+    - Hello, could you help me search for a place to dine in?
+    - I have a plan to eat out side for which I need some best places, can you search one for me?
+    - Can you pull up a list of places to eat?
+    - I'm looking for a good place to get something to eat, can you help?
+
+- intent: reserve_restaurant
+  examples: |
+    - I would like to make a booking at [Olive Garden](restaurant_name).
+    - I would like to make a booking at a restaurant.
+    - I want to make a booking at a restaurant.
+    - I want to book a table
+    - Book me a table at [Golden Wok](restaurant_name)
+    - Can you book me a table at [P.f. Chang's](restaurant_name)?
+    - Could you book me a table?
+    - I'd like to reserve a table at [Isla Restaurant](restaurant_name)
+    - Reserve a table for me
+    - I'd like to reserve a table for the [4th](date).
+    - Reserve the table for the (2nd of this month)[date] at (17:15)[time].
+    - I would like to make a reservation there at evening 5:30 on March 14th.
+
+
+- intent: inform
+  examples: |
+    - I would like for it to be in (San Jose)[city].
+    - I usually like eating the (American)[cuisine] type of food.
+    - a restaurant which is economical and is located in (Palo Alto)[city].
+    - I will be eating there at (11:30 am)[time] so make it for then.
+    - Some (Punjabi)[cuisine] kind of foods in (milpitas)[city]
+    - I want it on the (11th)[date]
+    - at (afternoon 1:30)[time]
+    - Find me (Ethiopian)[cuisine] cuisine in (Berkeley)[city].
+    - Some (Freshwater fish)[cuisine] kind of food in (Palo Alto)[city] would be perfect.
+    - Make it at (half past 6 in the evening)[time].
+    - Lobster sounds great. Please search in (San Mateo)[city].
+    - I'm looking for a (Filipino)[cuisine] place to eat.
+    - I want to eat in (San Bruno)[city]
+    - On the (12th)[date] at (six pm)[time]
+    - (12th)[date]
+    - (six pm)[time]
+    - (San Francisco)[city]
+    - (Brazilian)[cousine]
+    - (Mc' Donalds)[restaurant_name]
+
+
+- intent: get_information
+  examples: |
+    - Can you tell me if they feature live music?
+    - Will I be able to find liquor there?
+    - Can you give me the address of their location?
+    - And how expensive is the place?
+    - Do they serve alcohol?
+    - Can you check if a table is available at [17:30](time)?
+
+- intent: confirm
+  examples: |
+    - Yes
+    - That suits me well
+    - That's right
+    - That's correct
+    - Yes, that works for me
+    - Yes, that would be great
+    - That's good
+    - Yes, thank you that is correct
+    - Yes. Sounds good
+    - yes thats fine
+    - Yes, confirmed
+    - Yes, thank you
+    - Yes that's perfect
+    - Yes, that is good
+
+- intent: negate
+  examples: |
+    - No
+    - No, Thanks
+    - Wait no
+    - no thats it
+    - I'm sorry
+    - Sorry
+    - No, that's not correct
+    - No, it's not rigth
+    - That's not good
+    - Nope
+
+- intent: end_dialog
+  examples: |
+    - That's all
+    - Nope, that'll be all
+    - No, that is all
+
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Good afternoon
+    - Good morning
+    - Good evening
+    - Hey
+    - Greetings
