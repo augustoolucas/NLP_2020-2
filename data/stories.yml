@@ -1,32 +1,92 @@
 version: "2.0"
 
 stories:
+- story: greet user
+  steps:
+    - intent: greet
+    - action: utter_greet
+
 - story: find restaurant
   steps:
     - intent: find_restaurants
     - action: utter_ask_city
     - intent: inform
       entities:
-        - city: "Berkeley"
-    - action: utter_ask_cousine
+        - city: Berkeley
+    - action: utter_ask_cuisine
     - intent: inform
       entities:
-        - cousine: "American"
+        - cuisine: American
     - action: utter_show_restaurant
 
 - story: reserve restaurant
   steps:
     - intent: reserve_restaurant
       entities:
-        - restaurant_name: "Golden Wok"
+        - restaurant_name: Golden Wok
     - action: utter_ask_time
     - intent: inform
       entities:
-        - time: "six pm"
+        - time: six pm
     - action: utter_ask_date
     - intent: inform
       entities:
-        - date: "12th"
+        - date: 12th
     - action: utter_confirm_reservation_data
     - intent: confirm
     - action: utter_confirm_reservation
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_restaurants
+  - action: utter_ask_city
+  - intent: inform
+    entities:
+    - city: Palo Alto
+  - slot_was_set:
+    - city: Palo Alto
+  - action: utter_ask_cuisine
+  - intent: inform
+    entities:
+    - cuisine: spanish
+  - slot_was_set:
+    - cuisine: spanish
+  - action: utter_show_restaurant
+  - intent: reserve_restaurant
+    entities:
+    - restaurant_name: Golden Wok
+  - slot_was_set:
+    - restaurant_name: Golden Wok
+  - action: utter_ask_time
+  - intent: inform
+    entities:
+    - time: 1 pm
+  - slot_was_set:
+    - time: 1 pm
+  - action: utter_ask_date
+  - intent: inform
+    entities:
+    - date: today
+  - slot_was_set:
+    - date: today
+  - action: utter_confirm_reservation_data
+  - intent: confirm
+  - action: utter_confirm_reservation
+  - intent: end_dialog
+  - action: utter_end_dialog
+  - intent: greet
+  - action: utter_greet
+  - intent: find_restaurants
+  - action: utter_ask_city
+  - intent: inform
+    entities:
+    - city: London
+  - slot_was_set:
+    - city: London
+  - action: utter_ask_cuisine
+  - intent: inform
+  - action: utter_show_restaurant
+  - intent: end_dialog
+  - action: utter_end_dialog

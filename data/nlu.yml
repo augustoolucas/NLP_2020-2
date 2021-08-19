@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: find_restaurants
   examples: |
@@ -15,7 +14,9 @@ nlu:
     - I have a plan to eat out side for which I need some best places, can you search one for me?
     - Can you pull up a list of places to eat?
     - I'm looking for a good place to get something to eat, can you help?
-
+    - I want to find a place to eat
+    - I'm looking dor a restaurant
+    - Find me a nice restaurant
 - intent: reserve_restaurant
   examples: |
     - I would like to make a booking at [Olive Garden](restaurant_name).
@@ -30,8 +31,7 @@ nlu:
     - I'd like to reserve a table for the [4th](date).
     - Reserve the table for the (2nd of this month)[date] at (17:15)[time].
     - I would like to make a reservation there at evening 5:30 on March 14th.
-
-
+    - Get me a table at [Golden Wok](restaurant_name)
 - intent: inform
   examples: |
     - I would like for it to be in (San Jose)[city].
@@ -51,10 +51,16 @@ nlu:
     - (12th)[date]
     - (six pm)[time]
     - (San Francisco)[city]
-    - (Brazilian)[cousine]
+    - (Brazilian)[cuisine]
     - (Mc' Donalds)[restaurant_name]
-
-
+    - I'd like it to be in [New York](city)
+    - I'm thinking of getting [mexican](cuisine) food
+    - I'm looking for a restaurant in [Palo Alto](city)
+    - I want to eat [spanish](cuisine) food
+    - Book me at [1 pm](time)
+    - That'd be for [today](date)
+    - I want a restaurant in [London](city)
+    - Brazilian food would be great
 - intent: get_information
   examples: |
     - Can you tell me if they feature live music?
@@ -63,7 +69,6 @@ nlu:
     - And how expensive is the place?
     - Do they serve alcohol?
     - Can you check if a table is available at [17:30](time)?
-
 - intent: confirm
   examples: |
     - Yes
@@ -80,7 +85,7 @@ nlu:
     - Yes, thank you
     - Yes that's perfect
     - Yes, that is good
-
+    - Yes, that's it
 - intent: negate
   examples: |
     - No
@@ -93,13 +98,13 @@ nlu:
     - No, it's not rigth
     - That's not good
     - Nope
-
 - intent: end_dialog
   examples: |
     - That's all
     - Nope, that'll be all
     - No, that is all
-
+    - No, that's all. Thank you very much!
+    - Thanks for your help
 - intent: greet
   examples: |
     - Hi
@@ -109,3 +114,5 @@ nlu:
     - Good evening
     - Hey
     - Greetings
+    - Hi, can you help me?
+    - Hey, can you help me?

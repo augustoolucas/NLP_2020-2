@@ -1,22 +1,22 @@
-version: "2.0"
-
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - find_restaurants
-  - reserve_restaurant
-  - inform
-  - get_information
-  - confirm
-  - negate
-  - end_dialog
-
+- end_dialog
+- confirm
+- inform
+- find_restaurants
+- greet
+- reserve_restaurant
+- get_information
+- negate
 entities:
-  - restaurant_name
-  - city
-  - time
-  - cuisine
-  - date
-
+- city
+- cuisine
+- date
+- restaurant_name
+- time
 slots:
   restaurant_name:
     type: text
@@ -33,29 +33,34 @@ slots:
   date:
     type: text
     influence_conversation: true
-
 responses:
   utter_greet:
-    - text: "Hi, how can I assist you today?"
+  - text: Hi, how can I assist you today?
   utter_ask_restaurant_name:
-    - text: "At what restaurant do you want to make a reservation?"
+  - text: At what restaurant do you want to make a reservation?
   utter_ask_city:
-    - text: "You're looking for a restaurant in which city?"
+  - text: You're looking for a restaurant in which city?
   utter_ask_time:
-    - text: "I should book you at what time?"
-  utter_ask_cousine:
-    - text: "What kind of food are you thinking of eat?"
+  - text: I should book you at what time?
+  utter_ask_cuisine:
+  - text: What kind of food are you thinking of eat?
   utter_ask_date:
-    - text: "For what date would it be?"
+  - text: For what date would it be?
   utter_end_dialog:
-  - text: "It was my pleasure helping you out. Have a great day!"
+  - text: It was my pleasure helping you out. Have a great day!
   utter_show_restaurant:
-  - text: "I found a nice {cuisine} in {city}"
+  - text: I found a nice {cuisine} in {city}
   utter_confirm_reservation_data:
-  - text: "Just to confirm, a table at {restaurant_name} at {time} of {date}. Is that correct?"
+  - text: Just to confirm, a table at {restaurant_name} at {time} of {date}. Is that correct?
   utter_confirm_reservation:
-  - text: "Your reservation is confirmed. Anything else?"
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  - text: Your reservation is confirmed. Anything else?
+actions:
+- utter_ask_city
+- utter_ask_cuisine
+- utter_ask_date
+- utter_ask_time
+- utter_confirm_reservation
+- utter_confirm_reservation_data
+- utter_end_dialog
+- utter_greet
+- utter_show_restaurant
