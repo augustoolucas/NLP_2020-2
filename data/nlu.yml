@@ -29,12 +29,20 @@ nlu:
     - I'd like to reserve a table at [Isla Restaurant](restaurant_name)
     - Reserve a table for me
     - I'd like to reserve a table for the [4th](date).
-    - Reserve the table for the (2nd of this month)[date] at (17:15)[time].
+    - Reserve a table for the (2nd of this month)[date] at (17:15)[time].
     - I would like to make a reservation there at evening 5:30 on March 14th.
     - Get me a table at [Golden Wok](restaurant_name)
     - I want reserve a table on [Atlantic](restaurant_name).
     - I want a reservation on [Atlantic](restaurant_name).
-- intent: inform
+- intent: inform_restaurant_name
+  examples: |
+    - (Mc' Donalds)[restaurant_name]
+    - I'd like it to be (Brazzettus)[restaurant_name]
+    - At (Atlantic)[restaurant_name]
+    - (Mc' Donalds)[restaurant_name]
+    - (Mc' Donalds)[restaurant_name]
+
+- intent: inform_time_date
   examples: |
     - I will be eating there at (11:30 am)[time] so make it for then.
     - I want it on the (11th)[date]
@@ -97,3 +105,10 @@ nlu:
     - Greetings
     - Hi, can you help me?
     - Hey, can you help me?
+
+- lookup: restaurant_name
+  examples: |
+    - Corleone
+    - Central
+    - Atlantic
+    - Brazzetus

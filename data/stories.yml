@@ -11,7 +11,7 @@ stories:
     - intent: find_restaurants
     - action: utter_show_restaurant
 
-- story: reserve retaurant
+- story: reserve retaurant with name finish
   steps:
   - intent: reserve_restaurant
     entities:
@@ -19,7 +19,7 @@ stories:
   - slot_was_set:
     - restaurant_name: Atlantic
   - action: action_get_infos
-  - intent: inform
+  - intent: inform_time_date
     entities:
     - date: 21st
     - time: 7 pm
@@ -43,3 +43,105 @@ stories:
     - time: null
   - intent: negate
   - action: utter_end_dialog
+  - intent: negate
+  - action: utter_end_dialog
+
+- story: reserve retaurant request name finish
+  steps:
+  - intent: reserve_restaurant
+  - action: utter_ask_restaurant_name
+  - intent: inform_restaurant_name
+    entities:
+      - restaurant_name: null
+  - action: action_get_infos
+  - intent: inform_time_date
+    entities:
+    - date: 21st
+    - time: 7 pm
+  - slot_was_set:
+    - time: 7 pm
+  - slot_was_set:
+    - date: 21st
+  - action: utter_confirm_reservation_data
+  - intent: confirm
+  - action: utter_confirm_reservation
+  - action: action_reset_slots
+  - slot_was_set:
+      - restaurant_name: null
+  - slot_was_set:
+      - city: null
+  - slot_was_set:
+      - cuisine: null
+  - slot_was_set:
+      - date: null
+  - slot_was_set:
+      - time: null
+  - intent: negate
+  - action: utter_end_dialog
+
+- story: reserve retaurant with name restart
+  steps:
+  - intent: reserve_restaurant
+    entities:
+    - restaurant_name: Atlantic
+  - slot_was_set:
+    - restaurant_name: Atlantic
+  - action: action_get_infos
+  - intent: inform_time_date
+    entities:
+    - date: 21st
+    - time: 7 pm
+  - slot_was_set:
+    - time: 7 pm
+  - slot_was_set:
+    - date: 21st
+  - action: utter_confirm_reservation_data
+  - intent: confirm
+  - action: utter_confirm_reservation
+  - action: action_reset_slots
+  - slot_was_set:
+    - restaurant_name: null
+  - slot_was_set:
+    - city: null
+  - slot_was_set:
+    - cuisine: null
+  - slot_was_set:
+    - date: null
+  - slot_was_set:
+    - time: null
+  - intent: negate
+  - action: utter_end_dialog
+  - intent: confirm
+  - action: utter_ask_intent
+- story: reserve retaurant request name restart
+  steps:
+  - intent: reserve_restaurant
+  - action: utter_ask_restaurant_name
+  - intent: inform_restaurant_name
+    entities:
+      - restaurant_name: null
+  - action: action_get_infos
+  - intent: inform_time_date
+    entities:
+    - date: 21st
+    - time: 7 pm
+  - slot_was_set:
+    - time: 7 pm
+  - slot_was_set:
+    - date: 21st
+  - action: utter_confirm_reservation_data
+  - intent: confirm
+  - action: utter_confirm_reservation
+  - action: action_reset_slots
+  - slot_was_set:
+      - restaurant_name: null
+  - slot_was_set:
+      - city: null
+  - slot_was_set:
+      - cuisine: null
+  - slot_was_set:
+      - date: null
+  - slot_was_set:
+      - time: null
+  - intent: confirm
+  - action: utter_ask_intent

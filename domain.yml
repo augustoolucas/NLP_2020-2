@@ -3,7 +3,8 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- inform
+- inform_time_date
+- inform_restaurant_name
 - confirm
 - reserve_restaurant
 - negate
@@ -34,6 +35,8 @@ slots:
 responses:
   utter_greet:
   - text: Hi, how can I assist you today?
+  utter_ask_intent:
+    - text: How can I assist you?
   utter_ask_restaurant_name:
   - text: At what restaurant do you want to make a reservation?
   utter_ask_time:
@@ -63,3 +66,4 @@ actions:
 - utter_end_dialog
 - utter_greet
 - utter_show_restaurant
+- utter_ask_intent
