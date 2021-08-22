@@ -64,7 +64,7 @@ class ElasticModule:
         return list_rest
     
     def get_rest_names(self):
-        query = self.elastic.search(index=self.rest_index)['hits']['hits']
+        query = self.elastic.search(index=self.rest_index, size=50)['hits']['hits']
         
         rest_names = []
         for p in query:
@@ -116,8 +116,9 @@ class ActionGetRestNames(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
             
         list_rest_names = elastic_mod.get_rest_names()
-        list_rest_names = "\n"
+        list_rest_names = "\n".join(list_rest_names)
         dispatcher.utter_message(response="utter_list_restaurants", text=list_rest_names)
+        return []
 
 class ActionResetSlots(Action):
     def name(self) -> Text:

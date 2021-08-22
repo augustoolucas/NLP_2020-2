@@ -9,7 +9,8 @@ stories:
 - story: find restaurant
   steps:
     - intent: find_restaurants
-    - action: utter_show_restaurant
+    - action: utter_list_restaurants
+    - action: action_get_restaurants
 
 - story: reserve retaurant with name finish
   steps:
@@ -18,7 +19,9 @@ stories:
     - restaurant_name: Atlantic
   - slot_was_set:
     - restaurant_name: Atlantic
+  - action: utter_list_infos
   - action: action_get_infos
+  - action: utter_ask_time
   - intent: inform_time_date
     entities:
     - date: 21st
@@ -53,7 +56,9 @@ stories:
   - intent: inform_restaurant_name
     entities:
       - restaurant_name: null
+  - action: utter_list_infos
   - action: action_get_infos
+  - action: utter_ask_time
   - intent: inform_time_date
     entities:
     - date: 21st
@@ -86,7 +91,9 @@ stories:
     - restaurant_name: Atlantic
   - slot_was_set:
     - restaurant_name: Atlantic
+  - action: utter_list_infos
   - action: action_get_infos
+  - action: utter_ask_time
   - intent: inform_time_date
     entities:
     - date: 21st
@@ -120,7 +127,9 @@ stories:
   - intent: inform_restaurant_name
     entities:
       - restaurant_name: null
+  - action: utter_list_infos
   - action: action_get_infos
+  - action: utter_ask_time
   - intent: inform_time_date
     entities:
     - date: 21st
