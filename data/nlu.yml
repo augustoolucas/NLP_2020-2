@@ -32,43 +32,22 @@ nlu:
     - Reserve the table for the (2nd of this month)[date] at (17:15)[time].
     - I would like to make a reservation there at evening 5:30 on March 14th.
     - Get me a table at [Golden Wok](restaurant_name)
+    - I want reserve a table on [Atlantic](restaurant_name).
+    - I want a reservation on [Atlantic](restaurant_name).
 - intent: inform
   examples: |
-    - I would like for it to be in (San Jose)[city].
-    - I usually like eating the (American)[cuisine] type of food.
-    - a restaurant which is economical and is located in (Palo Alto)[city].
     - I will be eating there at (11:30 am)[time] so make it for then.
-    - Some (Punjabi)[cuisine] kind of foods in (milpitas)[city]
     - I want it on the (11th)[date]
     - at (afternoon 1:30)[time]
-    - Find me (Ethiopian)[cuisine] cuisine in (Berkeley)[city].
-    - Some (Freshwater fish)[cuisine] kind of food in (Palo Alto)[city] would be perfect.
     - Make it at (half past 6 in the evening)[time].
-    - Lobster sounds great. Please search in (San Mateo)[city].
-    - I'm looking for a (Filipino)[cuisine] place to eat.
-    - I want to eat in (San Bruno)[city]
     - On the (12th)[date] at (six pm)[time]
     - (12th)[date]
     - (six pm)[time]
-    - (San Francisco)[city]
-    - (Brazilian)[cuisine]
     - (Mc' Donalds)[restaurant_name]
-    - I'd like it to be in [New York](city)
-    - I'm thinking of getting [mexican](cuisine) food
-    - I'm looking for a restaurant in [Palo Alto](city)
-    - I want to eat [spanish](cuisine) food
     - Book me at [1 pm](time)
     - That'd be for [today](date)
-    - I want a restaurant in [London](city)
     - Brazilian food would be great
-- intent: get_information
-  examples: |
-    - Can you tell me if they feature live music?
-    - Will I be able to find liquor there?
-    - Can you give me the address of their location?
-    - And how expensive is the place?
-    - Do they serve alcohol?
-    - Can you check if a table is available at [17:30](time)?
+    - I want reserve on [21st](date) at [7 pm](time).
 - intent: confirm
   examples: |
     - Yes
@@ -86,6 +65,7 @@ nlu:
     - Yes that's perfect
     - Yes, that is good
     - Yes, that's it
+    - yes
 - intent: negate
   examples: |
     - No
@@ -98,6 +78,7 @@ nlu:
     - No, it's not rigth
     - That's not good
     - Nope
+    - no, thanks.
 - intent: end_dialog
   examples: |
     - That's all
