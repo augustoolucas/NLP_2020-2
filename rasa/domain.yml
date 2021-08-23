@@ -20,13 +20,7 @@ slots:
   restaurant_name:
     type: text
     influence_conversation: true
-  city:
-    type: text
-    influence_conversation: true
   time:
-    type: text
-    influence_conversation: true
-  cuisine:
     type: text
     influence_conversation: true
   date:

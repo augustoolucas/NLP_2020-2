@@ -39,8 +39,6 @@ nlu:
     - (Mc' Donalds)[restaurant_name]
     - I'd like it to be (Brazzettus)[restaurant_name]
     - At (Atlantic)[restaurant_name]
-    - (Mc' Donalds)[restaurant_name]
-    - (Mc' Donalds)[restaurant_name]
 
 - intent: inform_time_date
   examples: |
